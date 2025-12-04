@@ -1,8 +1,14 @@
 ## Descripción del repositorio
 
-Este repositorio implementa una **simulación del flujo metodológico presentado en el artículo original**, con el objetivo de reproducir el proceso mediante el cual se identifica el solver más adecuado para una instancia específica del problema del JSSP.
+Este repositorio implementa una **simulación del flujo metodológico presentado en el artículo**:
 
-La estructura del código y las etapas del experimento siguen de manera cercana la lógica propuesta en el artículo, organizándose en dos fases principales:
+> March, C., Pérez, C. y Salido, M. (2024).  
+> *Developing an Algorithm Selector for Green Configuration in Scheduling Problems*.  
+> arXiv:2409.08641. https://arxiv.org/abs/2409.08641
+
+El objetivo es **reproducir la lógica del artículo** para seleccionar el solver más adecuado según las características de una instancia del Job Shop Scheduling Problem (JSSP). La implementación sigue la estructura de entrenamiento y ejecución propuesta en el trabajo original.
+
+---
 
 ---
 

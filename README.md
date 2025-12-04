@@ -1,2 +1,52 @@
-# approach-asp-jssp
-Approach
+## Descripción del repositorio
+
+Este repositorio implementa una **simulación del flujo metodológico presentado en el artículo original**, con el objetivo de reproducir el proceso mediante el cual se identifica el solver más adecuado para una instancia específica del problema del JSSP.
+
+La estructura del código y las etapas del experimento siguen de manera cercana la lógica propuesta en el artículo, organizándose en dos fases principales:
+
+---
+
+## Estructura del flujo metodológico
+
+### 🔹 1. Training phase (fase de entrenamiento)
+
+En esta fase se procesa el conjunto de instancias conocidas y se recolecta la información necesaria para entrenar el sistema de recomendación:
+
+- **Feature processing:**  
+  Cada instancia del JSSP es analizada para extraer características relevantes (features) que serán usadas como entrada del modelo.
+
+- **Solvers considerados:**  
+  Las instancias se resuelven con diferentes solvers (por ejemplo, *Gecode*, *CPLEX*, *Gurobi*) con el fin de registrar su rendimiento.
+
+- **Entrenamiento de modelos de ML:**  
+  Con las características extraídas y el desempeño obtenido por cada solver, se entrenan diferentes modelos de aprendizaje supervisado, tales como:  
+  - Naive Bayes  
+  - Logistic Regression  
+  - Random Forest  
+  - MLP  
+  - XGBoost  
+  - (entre otros)
+
+El resultado de esta fase es un **modelo de recomendación** capaz de predecir qué solver es más conveniente para una nueva instancia.
+
+---
+
+### 🔹 2. Execution phase (fase de ejecución)
+
+En esta fase se utiliza el sistema entrenado para recomendar el solver adecuado:
+
+- **Nuevas instancias:**  
+  El usuario proporciona una instancia no vista previamente.
+
+- **Feature processing:**  
+  La instancia es procesada para obtener sus características mediante el mismo pipeline utilizado en el entrenamiento.
+
+- **Recommendation system:**  
+  El modelo predice cuál solver debería entregar el mejor rendimiento según las características de esa instancia.
+
+- **Best solver:**  
+  El sistema devuelve la recomendación final del solver óptimo.
+
+---
+
+Este repositorio **imita la metodología del artículo**, reproduciendo tanto la fase de entrenamiento como la fase de recomendación, con el propósito de identificar, a partir de las características de una instancia, **el solver que ofrece el mejor desempeño esperado**.
